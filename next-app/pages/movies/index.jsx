@@ -5,16 +5,11 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Heading } from '@chakra-ui/react'
 const Moviepage = ({movie}) => {
-    // console.log(movie)
     const router=useRouter()
     const handleClick=(id)=>{
       router.push(`movies/${id}`)
     }
-    // const myLoader = ({ src, width, quality }) => {
-    //     return `https://images-na.ssl-images-amazon.com/images/${src}?w=${width}&q=${quality || 75}`
-    //   }
     return (<>
-  
     <Head>
   <title>Movies pages</title>
   <meta title='decription' content="blogs,react,js,typecript" />
@@ -37,7 +32,6 @@ const Moviepage = ({movie}) => {
     </>
     )
   }
-
 
 export const  getServerSideProps=async()=>{
     let response=await fetch(`https://vercel-deploy-jade-one.vercel.app/movies`)
